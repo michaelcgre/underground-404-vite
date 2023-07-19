@@ -1,0 +1,49 @@
+.banner-wrapper {
+  background: rgb(36, 36, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(36, 36, 36, 1) 30%,
+    rgba(245, 254, 253, 1) 62%
+  );
+  padding-bottom: 4rem;
+}
+
+.banner-carousel {
+  max-width: 70rem;
+}
+
+.banner-title {
+  font-size: 3rem;
+}
+
+@media (max-width: 924px) {
+  .banner-title {
+    font-size: 2rem;
+  }
+}
+
+.banner-carousel {
+  border: 6px solid #242424;
+  border-radius: 10px;
+  min-width: 312px;
+}
+
+.banner-images {
+  border-radius: 4px;
+}
+
+.banner-carousel-title {
+  text-shadow: 1px 0px 0px #000;
+  color: #715c83 !important;
+  display: block !important;
+}
+
+.banner-carousel-item:hover .banner-carousel-title {
+  text-decoration: underline;
+}
+
+.banner-carousel-section .banner-carousel-title {
+  text-shadow: 1px 0px 0px #000;
+  color: #715c83;
+  display: block;
+}

@@ -1,0 +1,91 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "@fontsource/nosifer";
+@import "@fontsource/alegreya-sans";
+@import "@fontsource/alegreya";
+
+Nav .nav-link,
+footer .nav-link {
+  color: #715c83;
+}
+
+Nav .nav-link:hover,
+footer .nav-link:hover {
+  color: #8f79a1;
+  text-decoration: underline;
+}
+
+.active {
+  color: #8f79a1 !important;
+}
+
+.landing-cards {
+  width: 18rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.card-title:hover {
+  text-decoration: underline;
+}
+
+.card-body {
+  min-height: 214px;
+}
+
+.card-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.spotify {
+  max-width: 516px;
+  border-radius: 12px;
+}
+
+footer {
+  border-top: 4px solid #526863;
+}
+
+.not-landing-cards {
+  width: 25rem;
+}
+
+@media (max-width: 432px) {
+  .not-landing-cards {
+    width: 18rem;
+  }
+}
+
+.nav-background {
+  background-color: #242424;
+}
+
+.header-wrapper,
+.site-footer {
+  background-color: #242424;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nosifer";
+  color: #526863 !important;
+}
+
+p,
+a {
+  font-family: "Alegreya Sans";
+}
+
+span {
+  font-family: "Alegreya";
+}
+
+.page-wrapper {
+  background-color: #f5fefd;
+}

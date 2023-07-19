@@ -1,0 +1,16 @@
+.description-spotify-section {
+  margin-top: 1rem;
+  padding: 6rem 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../assets/BackgroundSmall.png");
+  background-color: #f5fefd;
+}
+
+@media (min-width: 992px) {
+  .description-spotify-section {
+    margin-top: 0;
+    background-image: url("../assets/BackgroundBig.png");
+  }
+}

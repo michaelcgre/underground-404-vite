@@ -1,0 +1,33 @@
+.card {
+  width: 18rem;
+  background-color: #f5fefd !important;
+  border: none !important;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  text-decoration: none !important;
+  color: #526863 !important;
+}
+
+.card-title:hover {
+  text-decoration: underline !important;
+  color: #647f79 !important;
+}
+
+.card-btn {
+  background-color: #715c83 !important;
+  color: #fff;
+}
+
+.card-btn:hover {
+  background-color: #8f79a1 !important;
+}
+
+.card-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.card-body {
+  min-height: 228.6px !important;
+}
