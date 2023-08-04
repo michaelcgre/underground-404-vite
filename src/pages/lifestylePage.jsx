@@ -1,4 +1,5 @@
 import Lifestyle from "../components/Lifestyle";
+
 const LifestylePage = () => {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center page-wrapper text-center">

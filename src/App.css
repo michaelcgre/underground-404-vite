@@ -1,4 +1,3 @@
-@import "../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "@fontsource/nosifer";
 @import "@fontsource/alegreya-sans";
 @import "@fontsource/alegreya";
@@ -78,14 +77,15 @@ h6 {
 }
 
 p,
-a {
-  font-family: "Alegreya Sans";
-}
-
+a,
 span {
   font-family: "Alegreya";
 }
 
 .page-wrapper {
   background-color: #f5fefd;
+}
+
+.search-results {
+  max-height: 200px;
 }

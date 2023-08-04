@@ -7,6 +7,7 @@ import ArtistSpotlight from "./pages/artistSpotlightPage";
 import MusicReviews from "./pages/musicReviewPage";
 import Lifestyle from "./pages/lifestylePage";
 import BlogPage from "./pages/BlogPage";
+import SearchPage from "./pages/searchPage";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Route path="artistSpotlight" element={<ArtistSpotlight />} />
         <Route path="musicReviews" element={<MusicReviews />} />
         <Route path="lifestyle" element={<Lifestyle />} />
-        <Route path="/blogs/:id" element={<BlogPage />} />
+        <Route path="blogs/:id" element={<BlogPage />} />
+        <Route path="/searchPage" element={<SearchPage />} />
       </Routes>
       <Footer />
     </div>

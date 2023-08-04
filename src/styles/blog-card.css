@@ -10,11 +10,6 @@
   color: #526863 !important;
 }
 
-.card-title:hover {
-  text-decoration: underline !important;
-  color: #647f79 !important;
-}
-
 .card-btn {
   background-color: #715c83 !important;
   color: #fff;
@@ -30,4 +25,13 @@
 
 .card-body {
   min-height: 228.6px !important;
+}
+
+.title-link {
+  text-decoration: none !important;
+}
+
+.title-link:hover {
+  text-decoration: underline !important;
+  color: #647f79 !important;
 }

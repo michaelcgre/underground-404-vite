@@ -18,17 +18,13 @@ const blogCard = ({ blog }) => {
         </Link>
         <CardBody className="card-body">
           <CardTitle>
-            <a className="card-title fw-bold" href={`/blogs/${blog.id}`}>
-              {blog.title}
-            </a>
+            <Link className="title-link" to={`/blogs/${blog.id}`}>
+              <span className="card-title fw-bold">{blog.title}</span>
+            </Link>
           </CardTitle>
           <CardText className="card-text">{blog.description}</CardText>
           <div className="text-end">
-            <Button
-              className="card-btn fw-bold"
-              tag={Link}
-              to={`/blogs/${blog.id}`}
-            >
+            <Button className="card-btn" tag={Link} to={`/blogs/${blog.id}`}>
               Read More
             </Button>
           </div>
