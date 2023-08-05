@@ -1,20 +1,15 @@
 import { selectArtistSpotlight } from "../blogs/blogsSlice";
-import { Container, Row, Col } from "reactstrap";
 import BlogCard from "../blogs/blogCard";
 
 const artistSpotlight = () => {
   const artistSpotlight = selectArtistSpotlight();
 
   return (
-    <Container>
-      <Row>
-        {artistSpotlight.map((blog) => (
-          <Col key={blog.id}>
-            <BlogCard blog={blog} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <div className="d-flex justify-content-around align-items-center flex-wrap gap-5">
+      {artistSpotlight.map((blog) => (
+        <BlogCard key={blog.id} blog={blog} />
+      ))}
+    </div>
   );
 };
 

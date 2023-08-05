@@ -81,22 +81,18 @@ const BlogCarousel = () => {
             );
           })}
           {showPreviousControl && (
-            <div carousel-control-prev>
-              <CarouselControl
-                direction="prev"
-                directionText="Previous"
-                onClickHandler={() => handleSlideChange(activeSlide - 1)}
-              />
-            </div>
+            <CarouselControl
+              direction="prev"
+              directionText="Previous"
+              onClickHandler={() => handleSlideChange(activeSlide - 1)}
+            />
           )}
           {showNextControl && (
-            <div carousel-control-next>
-              <CarouselControl
-                direction="next"
-                directionText="Next"
-                onClickHandler={() => handleSlideChange(activeSlide + 1)}
-              />
-            </div>
+            <CarouselControl
+              direction="next"
+              directionText="Next"
+              onClickHandler={() => handleSlideChange(activeSlide + 1)}
+            />
           )}
         </Carousel>
       </Container>

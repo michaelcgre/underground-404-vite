@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   Collapse,
   NavbarToggler,
@@ -37,6 +37,25 @@ const Header = () => {
   const handleSearchIconClick = () => {
     navigate("/searchPage", { state: { searchText } });
   };
+
+  const searchResultsRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (
+      searchResultsRef.current &&
+      !searchResultsRef.current.contains(event.target)
+    ) {
+      setSearchResults([]);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="header-wrapper">
@@ -84,25 +103,34 @@ const Header = () => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <div className="search-container d-flex justify-content-center align-items-center gap-1">
+                <div className="search-container d-flex justify-content-center align-items-center gap-2">
                   <Input
                     type="search"
                     value={searchText}
                     onChange={handleSearchChange}
                     placeholder="Search"
-                    className="search-input"
+                    className="search-input shadow-none"
                   />
                   <FontAwesomeIcon
                     icon={faSearch}
-                    className="search-icon text-success fs-4"
+                    className="search-icon fs-4"
                     onClick={handleSearchIconClick}
                   />
                 </div>
-                <div className="search-results position-absolute z-1 bg-light overflow-y-auto">
+                <div
+                  className="search-results rounded-bottom position-absolute z-1 overflow-y-auto"
+                  ref={searchResultsRef}
+                >
                   {searchResults &&
                     searchResults.map((result, index) => (
-                      <Link key={index} to={`/blogs/${result.id}`}>
-                        <p className="text-success">{result.title}</p>
+                      <Link
+                        className="search-link"
+                        key={index}
+                        to={`/blogs/${result.id}`}
+                      >
+                        <p className="search-result my-auto p-2">
+                          {result.title}
+                        </p>
                       </Link>
                     ))}
                 </div>

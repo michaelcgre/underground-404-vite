@@ -88,4 +88,32 @@ span {
 
 .search-results {
   max-height: 200px;
+  background-color: #242424;
+  border: 1px solid #715c83;
+  border-top: none;
+}
+
+.search-result {
+  color: #f5fefd;
+  border-bottom: 1px solid gray;
+}
+
+.search-icon {
+  color: #715c83;
+  cursor: pointer;
+}
+
+.search-input {
+  width: 12rem !important;
+  background-color: #242424 !important;
+  border: 1px solid #715c83 !important;
+  color: #f5fefd !important;
+}
+
+.search-input:focus {
+  border: 1px solid #8f79a1 !important;
+}
+
+.search-link {
+  text-decoration: none;
 }

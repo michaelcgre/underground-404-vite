@@ -19,7 +19,6 @@ const BlogPage = () => {
           <Col lg="8">
             <img
               className="img-fluid rounded"
-              top
               src={blog.blogHeader}
               alt={blog.title}
             />
@@ -51,7 +50,7 @@ const BlogPage = () => {
               width="100%"
               height="352"
               frameBorder="0"
-              allowfullscreen=""
+              allowFullScreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
               style={{ maxWidth: "516px" }}

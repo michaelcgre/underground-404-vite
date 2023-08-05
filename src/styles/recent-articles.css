@@ -27,8 +27,8 @@
 
 .carousel-control-prev,
 .carousel-control-next {
-  position: absolute;
-  overflow: -moz-hidden-unscrollable;
+  position: absolute !important;
+  overflow: -moz-hidden-unscrollable !important;
 }
 
 .carousel-control-prev {
