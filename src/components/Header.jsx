@@ -7,7 +7,7 @@ import {
   Input,
   Container,
 } from "reactstrap";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { Navbar, NavbarBrand } from "reactstrap";
 import Underground404Logo from "../assets/underground-404-logo.png";
 import { selectAllBlogs } from "../blogs/blogsSlice";
@@ -57,6 +57,12 @@ const Header = () => {
     };
   }, []);
 
+  const location = useLocation();
+
+  useEffect(() => {
+    setSearchText("");
+  }, [location.pathname]);
+
   return (
     <div className="header-wrapper">
       <Container>
@@ -73,37 +79,41 @@ const Header = () => {
             className="navbar-dark"
             onClick={() => setMenuOpen(!menuOpen)}
           />
+
           <Collapse isOpen={menuOpen} navbar>
             <Nav
-              className="ms-auto d-flex justify-content-center align-items-center gap-3"
+              className="mx-auto d-flex justify-content-between align-items-center gap-3 w-100"
               navbar
             >
-              <NavItem>
-                <NavLink
-                  className="nav-link fw-bold text-uppercase fs-5 text-center"
-                  to="/artistSpotlight"
-                >
-                  Artist Spotlight
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  className="nav-link fw-bold text-uppercase fs-5 text-center"
-                  to="/musicReviews"
-                >
-                  Music Reviews
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  className="nav-link fw-bold text-uppercase fs-5 text-center"
-                  to="/lifestyle"
-                >
-                  Lifestyle
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <div className="search-container d-flex justify-content-center align-items-center gap-2">
+              <div className="d-flex align-items-center justify-content-center gap-4 flex-grow-1 flex-column flex-lg-row">
+                <NavItem>
+                  <NavLink
+                    className="nav-link fw-bold text-uppercase fs-5 text-center"
+                    to="/artistSpotlight"
+                  >
+                    Artist Spotlight
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className="nav-link fw-bold text-uppercase fs-5 text-center"
+                    to="/musicReviews"
+                  >
+                    Music Reviews
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className="nav-link fw-bold text-uppercase fs-5 text-center"
+                    to="/lifestyle"
+                  >
+                    Lifestyle
+                  </NavLink>
+                </NavItem>
+              </div>
+
+              <div>
+                <div className="search-container d-flex justify-content-center align-items-center gap-2 mb-2 mb-lg-0">
                   <Input
                     type="search"
                     value={searchText}
@@ -134,7 +144,7 @@ const Header = () => {
                       </Link>
                     ))}
                 </div>
-              </NavItem>
+              </div>
             </Nav>
           </Collapse>
         </Navbar>

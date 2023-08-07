@@ -3,6 +3,7 @@ import { blogs } from "../blogs/blogs";
 import { Container, Col, Row } from "reactstrap";
 import YouMightLike from "../components/MightLike";
 import { DiscussionEmbed } from "disqus-react";
+import StarRating from "../components/StarRating";
 
 const BlogPage = () => {
   const { id } = useParams();
@@ -25,6 +26,7 @@ const BlogPage = () => {
             <h1 className="mt-2">{blog.title}</h1>
             <div className="d-flex justify-content-between my-3 author-and-date text-secondary">
               <span>{blog.author}</span>
+              <StarRating blogId={blog.id} />
               <span>{blog.date}</span>
             </div>
             <p className="fs-5">{blog.paragraphOne}</p>

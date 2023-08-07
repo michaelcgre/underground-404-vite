@@ -1,5 +1,6 @@
 import { selectAllBlogs } from "../blogs/blogsSlice";
 import BlogCard from "../blogs/blogCard";
+import PropTypes from "prop-types";
 
 const YouMightLike = ({ currentBlogId }) => {
   const blogs = selectAllBlogs();
@@ -27,6 +28,10 @@ const YouMightLike = ({ currentBlogId }) => {
       </div>
     </div>
   );
+};
+
+YouMightLike.propTypes = {
+  currentBlogId: PropTypes.string.isRequired,
 };
 
 export default YouMightLike;

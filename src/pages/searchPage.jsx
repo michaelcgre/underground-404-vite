@@ -25,11 +25,15 @@ const SearchPage = () => {
     <div className="page-wrapper">
       <Container className="d-flex flex-column justify-content-center align-items-center text-center">
         <h1 className="mb-5 mt-4 mx-2">Search Results</h1>
-        <div className="d-flex justify-content-around align-items-center flex-wrap gap-5">
-          {searchResults.map((result, index) => (
-            <BlogCard key={index} blog={result} />
-          ))}
-        </div>
+        {searchResults.length > 0 ? (
+          <div className="d-flex justify-content-around align-items-center flex-wrap gap-5">
+            {searchResults.map((result, index) => (
+              <BlogCard key={index} blog={result} />
+            ))}
+          </div>
+        ) : (
+          <p className="fs-2 fw-bold no-results">No results found</p>
+        )}
       </Container>
     </div>
   );
