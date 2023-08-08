@@ -4,6 +4,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 
 const StarRating = ({ blogId, onRatingChange }) => {
+  // State for holding the current rating and hover value
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(null);
 
@@ -15,6 +16,7 @@ const StarRating = ({ blogId, onRatingChange }) => {
     }
   }, [blogId]);
 
+  // Handler function for setting the rating and saving it to local storage
   const handleRating = (value) => {
     setRating(value);
     localStorage.setItem(`rating-${blogId}`, value);
@@ -23,10 +25,12 @@ const StarRating = ({ blogId, onRatingChange }) => {
 
   return (
     <div>
+      {/* Iterate over 5 stars, render each star with appropriate styles and behaviors */}
       {[...Array(5)].map((star, index) => {
         const ratingValue = index + 1;
         return (
           <label key={index}>
+            {/* Hidden radio input to manage the selection state */}
             <input
               type="radio"
               name={`rating-${blogId}`}
@@ -34,6 +38,7 @@ const StarRating = ({ blogId, onRatingChange }) => {
               style={{ display: "none" }}
               onClick={() => handleRating(ratingValue)}
             />
+            {/* Star icon that changes color based on hover or rating value */}
             <FontAwesomeIcon
               icon={faStar}
               style={{

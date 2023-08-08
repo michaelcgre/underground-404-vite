@@ -15,6 +15,7 @@ function BannerCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
+  // Function to go to the next slide
   const next = () => {
     if (animating) return;
     const nextIndex =
@@ -22,6 +23,7 @@ function BannerCarousel() {
     setActiveIndex(nextIndex);
   };
 
+  // Function to go to the previous slide
   const previous = () => {
     if (animating) return;
     const nextIndex =
@@ -29,6 +31,7 @@ function BannerCarousel() {
     setActiveIndex(nextIndex);
   };
 
+  // Function to go to a specific slide
   const goToIndex = (newIndex) => {
     if (animating) return;
     setActiveIndex(newIndex);

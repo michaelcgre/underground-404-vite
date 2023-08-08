@@ -6,18 +6,27 @@ import { Container } from "reactstrap";
 
 const SearchPage = () => {
   const [searchResults, setSearchResults] = useState([]);
+
+  // Location object to get the search text from the state
   const location = useLocation();
 
+  // Effect to run when search text changes
   useEffect(() => {
+    // Extract search text from location state
     const searchText = location.state.searchText;
+
     if (searchText) {
       const blogs = selectAllBlogs();
+
+      // Filter blogs that contain the search text in their title
       const results = blogs.filter((blog) =>
         blog.title.toLowerCase().includes(searchText.toLowerCase())
       );
+      // Update state with search results
       setSearchResults(results);
     } else {
-      setSearchResults([]);
+      // If no search text, clear results
+      setSearchResults([]); // Effect dependency on search text
     }
   }, [location.state.searchText]);
 

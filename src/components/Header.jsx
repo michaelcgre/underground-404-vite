@@ -15,31 +15,36 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+  // State variables to handle the menu toggle, search text, and search results
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   const navigate = useNavigate();
 
+  // Function to handle the search text change
   const handleSearchChange = (e) => {
     setSearchText(e.target.value);
     if (e.target.value) {
       const blogs = selectAllBlogs();
+      // Filter blogs by title, containing the search text
       const results = blogs.filter((blog) =>
         blog.title.toLowerCase().includes(e.target.value.toLowerCase())
       );
       setSearchResults(results);
     } else {
-      setSearchResults([]);
+      setSearchResults([]); // If search text is empty, clear results
     }
   };
 
+  // Function to handle click on search icon, navigate to search page
   const handleSearchIconClick = () => {
     navigate("/searchPage", { state: { searchText } });
   };
 
   const searchResultsRef = useRef(null);
 
+  // Function to handle clicks outside the search results, hiding them
   const handleClickOutside = (event) => {
     if (
       searchResultsRef.current &&
@@ -49,6 +54,7 @@ const Header = () => {
     }
   };
 
+  // Use effect hook to listen for mousedown events for the above functionality
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
 
@@ -59,6 +65,7 @@ const Header = () => {
 
   const location = useLocation();
 
+  // Use effect hook to clear search text when the pathname changes
   useEffect(() => {
     setSearchText("");
   }, [location.pathname]);

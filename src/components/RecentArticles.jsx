@@ -16,6 +16,7 @@ const BlogCarousel = () => {
 
   const lastBlogIndex = blogs.length - 1;
 
+  // Handle responsiveness by adjusting the number of cards per slide
   useEffect(() => {
     const updateCardsPerSlide = () => {
       if (window.innerWidth <= 767) {
@@ -29,15 +30,15 @@ const BlogCarousel = () => {
 
     updateCardsPerSlide();
 
-    window.addEventListener("resize", updateCardsPerSlide);
+    window.addEventListener("resize", updateCardsPerSlide); // Listener to update cards per slide on window resize
 
     return () => {
-      window.removeEventListener("resize", updateCardsPerSlide);
+      window.removeEventListener("resize", updateCardsPerSlide); // Cleanup listener
     };
   }, []);
 
-  const showPreviousControl = activeSlide > 0;
-  const showNextControl = activeSlide < totalSlides - 1;
+  const showPreviousControl = activeSlide > 0; // Determine whether to show previous control
+  const showNextControl = activeSlide < totalSlides - 1; // Determine whether to show next control
 
   return (
     <div className="recent-articles-section">
