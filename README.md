@@ -24,4 +24,7 @@ Underground 404 serves as a platform to discover and support artists that thrive
 - **React Router**: Handling navigation and routing.
 - **Reactstrap**: For styling components.
 - **Disqus-React**: For commenting on blogs.
-- Other libraries and tools as required.
+
+---
+
+For more information, please visit the [official website](https://underground404blogs.michaelcgregorio.com/).
