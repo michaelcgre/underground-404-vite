@@ -10,7 +10,7 @@ Welcome to Underground 404, a unique and vibrant blog site dedicated to the expl
 
 ## About
 
-Underground 404 serves as a platform to discover and support artists that thrive beneath the mainstream surface. Our goal is to provide a space for creative individuals to share their work, ideas, and inspirations, and to connect them with an audience who appreciates the beauty of the unconventional.
+Underground 404 serves as a platform to discover and support artists that thrive beneath the mainstream surface. The goal was to provide a space to showcase creative individuals on their their work, ideas, and inspirations, and to connect them with an audience who appreciates the beauty of the unconventional.
 
 ## Features
 
@@ -27,4 +27,4 @@ Underground 404 serves as a platform to discover and support artists that thrive
 
 ---
 
-For more information, please visit the [official website](https://underground404blogs.michaelcgregorio.com/).
+For more information, please visit the [live website](https://underground404blogs.michaelcgregorio.com/).
